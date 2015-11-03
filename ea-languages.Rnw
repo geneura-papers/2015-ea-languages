@@ -210,7 +210,7 @@ inspired by the initial implementation made in Perl. Adequate data and control
 structures were used for running the application, which applies
 mutation to a single generated chromosome a hundred thousand
 times. The length of the mutated string starts at 16 and is doubled
-until reaching $2^15$, that is, 32768. This upper length was chosen to
+until $2^{15}$ is reached, that is, 32768. This upper length was chosen to
 have an ample range, but also so small as to be able to run the
 benchmarks within one hour. Results are shown next.
 
@@ -239,12 +239,11 @@ than any other small sizes, although slower than Python at bigger
 sizes. After these two, next position goes to node.js, which uses a very
 efficient implementation of a Just-in-Time interpreter for the %Mario: Si se usó V8 es un compilador 
 % Es un intérprete, porque se lee cada vez del fuente. - jj
-JavaScript language. Then Perl, with a bitstring representation being
+JavaScript language. Then Scala, whose bitvector representation is
+better than the bitstring and finally Perl, with a bitstring representation being
 slightly better than bit vectors, although the difference dilutes with
-time, and eventually Scala, with a bitstring actually faster than
-using bit vectors. In fact, Scala is a bit better than Perl for the
-smallest sizes, less than 128 bits and if a string representation is
-used, but that advantage disappears for greater sizes. 
+time. In fact, Scala is a bit better than node for the
+smaller sizes, less than 128 bits and any representation, but that advantage disappears for greater sizes. 
 
 The behavior of the languages is not linear either. Node.js and Python
 both have an
@@ -276,24 +275,24 @@ can be a factor on the choice of a language for implementing solution
 to problems using evolutionary algorithms, at least if raw running
 speed is the main consideration. And, if that is our main concern, the
 fastest language for mutating strings has been found to be Lua and Python,
-followed by node.js and Perl. All interpreted languages are faster for the
+followed by node.js and Perl. Most interpreted languages are faster for the
 wider range of chromosome sizes than Scala, which is a compiled
 language that uses the Java Virtual machine. 
 
-However, Lua is not exactly a popular language, although it definitely
-has found its niche in embedded systems such as in-game scripting,
-game development or servers so %Pablo: game development
+Despite its speed Lua is not exactly a popular language, although it definitely
+has found its niche in embedded systems and applications such as in-game scripting,
+game development or servers so 
 our choice for EA programming languages would be Python or JavaScript,
 which are fast enough, popular, allow for fast development and have a
 great and thriving community. JavaScript does have an advantage over
-Python: Beside being interpreted languages and using
+Python: Besides being interpreted languages and using
 dynamic typing, it can express complex operations in a terse syntax
 and bestows implementations both in browsers and on the
 server. We can conclude from these facts and the measurements made in
 this paper that JavaScript is perfectly adequate for any scientific
 computing task, including evolutionary algorithms.
 
-That does not mean that Perl, Lua or even Scala are not adequate for
+That does not mean that Perl or Scala  are not adequate for
 scientific computing. However, they
 might not be if experiments take a long time and time is of the
 essence; in that case implementing the critical parts of the program
