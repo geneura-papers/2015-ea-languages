@@ -9,10 +9,7 @@ import Control.Applicative
 import System.Random
 import Data.List
 import Data.Time
-
--- Creates a random boolean list, given a generator
-randomBoolList :: (Random a) => Int -> StdGen -> [a]
-randomBoolList n = Data.List.take n . Data.List.unfoldr (Just . random)
+import Auxiliary
 
 -- Complete benchmark for a given length
 benchmark :: Int -> IO ()
