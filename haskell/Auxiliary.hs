@@ -20,3 +20,12 @@ randomBoolList n = Data.List.take n . Data.List.unfoldr (Just . random)
 -- Creates a random integer list, given a generator and a range
 randomIntList :: Int -> (Int,Int) -> StdGen -> [Int]
 randomIntList n (a,b) = Data.List.take n . Data.List.unfoldr (Just . (randomR (a,b)))
+
+-- Creates a random mutable vector
+randomVector :: Int -> IO (MVector (PrimState IO) Bool)
+randomVector len = do
+  let seed = mkStdGen 1
+  let rs = (randomBoolList len seed) :: [Bool]
+  vector <- V.replicate len False
+  sequence $ Prelude.map (\n -> write vector n (rs!!n)) [0..len-1]
+  return vector
