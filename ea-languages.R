@@ -1,13 +1,11 @@
 ## ----setup, cache=FALSE,echo=FALSE---------------------------------------
 library("ggplot2")
 library(RColorBrewer)
-library("dplyr")
 
 # Load files
 measures.bf <- read.csv('measures-bitflip.csv')
 measures.xo <- read.csv('measures-xover.csv')
 measures.mo <- read.csv('measures-maxones.csv')
-# measures.bf <- measures.bf %>% group_by(length) %>% mutate(NORM = normalit(time))
 
 ## ----results-bf, cache=FALSE,echo=FALSE----------------------------------
 
