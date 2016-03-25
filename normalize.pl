@@ -30,7 +30,9 @@ say join(", ", @columns), ", datastructure, normtime";
 for my $l ( keys %data ) {
   my ($lang, $datas) = split("-",$l);
   for my $b ( keys %{$data{$l}} ) {
-    say "$l, $b, $data{$l}{$b}, $datas, ", $data{$l}{$b}/$data{$norm}{$b};
+    if ( $data{$norm}{$b} ) {
+      say "$l, $b, $data{$l}{$b}, $datas, ", $data{$l}{$b}/$data{$norm}{$b};
+    }
   }
 }
 
