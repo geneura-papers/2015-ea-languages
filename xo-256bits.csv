@@ -1,0 +1,14 @@
+languagerepresentation, length, time, datastructure, normtime
+C++-BitString, 256, 3.73445, BitString, 0.45581398271949
+Java-BitSet, 256, 0.015372861, BitSet, 0.00187635796387771
+C-BitString, 256, 0.259115, BitString, 0.0316266759850475
+Scala-BitVector, 256, 2.42401833, BitVector, 0.295867249309094
+node-BitString, 256, 0.157834305, BitString, 0.0192647064954177
+python-BitString, 256, 0.189651, BitString, 0.0231481416638954
+lua-BitString, 256, 0.227511, BitString, 0.0277692016287523
+perlsimple-BitString, 256, 0.10122, BitString, 0.0123545612689598
+perl5.20-BitString, 256, 0.09943, BitString, 0.012136080092597
+Scala-BitString, 256, 8.192925495, BitString, 1
+PHP-BitString, 256, 0.086251974105835, BitString, 0.0105276160705322
+Go-BitVector, 256, 0.014078094000000001, BitVector, 0.00171832320562315
+julia-BitString, 256, 1.0335490703582764, BitString, 0.12615140598911
