@@ -21,11 +21,13 @@ d3.csv("mo-256bits.csv",
 	   var bars = animation_div.selectAll("div").data(data);
 
 	   bars.enter().append("div")
-	       .style("width", function( data ) {
-		   return scale(data,this_width);
-	       })
 	       .style("background-color",  function( data ) {
 		   return colors[data[' datastructure']];
 	       })
 	       .text(function(d) { return d.languagerepresentation; });
+
+	   bars.transition()
+	       .style("width", function( data ) {
+	       return scale(data,this_width);
+	       });
        });
