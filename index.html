@@ -16,6 +16,10 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/extra.css">
+
+		<!-- d3 here -->
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -42,37 +46,59 @@
 			<div class="slides">
 			  <section>
 			    <h1>Benchmarking languages for evolutionary algorithms</h1>
+			  </section>
+
+			  <section id='bf'>
+			  </section>
+
+			  <section id='xo'>
+			  </section>
+
+			  <section id='mo'>
+			  </section>
+			  
 			</div>
 
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/animation.js"></script>
 
 		<script>
 
 		  // Full list of configuration options available at:
 		  // https://github.com/hakimel/reveal.js#configuration
 		  Reveal.initialize({
-		  controls: true,
-		  progress: true,
-		  history: true,
-		  center: true,
-		  width: 1200,
-		  height: 800,
-		  transition: 'concave', // none/fade/slide/convex/concave/zoom
-		  
-		  // Optional reveal.js plugins
-		  dependencies: [
-		  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-		  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		  { src: 'plugin/zoom-js/zoom.js', async: true },
-		  { src: 'plugin/notes/notes.js', async: true }
-		  ]
+		    controls: true,
+		    progress: true,
+		    history: true,
+		    center: true,
+		    width: 1200,
+		    height: 800,
+		    transition: 'concave', // none/fade/slide/convex/concave/zoom
+		    
+		    // Optional reveal.js plugins
+		    dependencies: [
+		      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		      { src: 'plugin/zoom-js/zoom.js', async: true },
+		      { src: 'plugin/notes/notes.js', async: true }
+		    ]
 		  });
-		  
+
+		 var d3_divs = new Array;
+		 function set_div_data ( div_id, bars ) {
+		   d3_divs[ div_id ] = bars;
+		 }
+
+		 for (var d in ['bf','xo','mo']) {
+		   load_data( "#"+d, d+"-256bits.csv", set_div_data );
+		 }
+		 console.log( d3_divs );
+
 		</script>
 
 	</body>
