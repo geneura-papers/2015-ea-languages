@@ -1,10 +1,9 @@
 // update data
 
-var colors = { " BitString": "red",
-	       " BitVector": "blue",
+var colors = { " BitString": "lightblue",
+	       " BitVector": "yellow",
 	       " BitSet": "orange" };
 
-console.log( colors );
 // data should be at most 1
 function scale( data, pixels ) {
     return data[" normtime"]*pixels + "px"; 
@@ -12,10 +11,8 @@ function scale( data, pixels ) {
     
 // loads data
 function make_bars( div_id, file_name, cb ) {
-    console.log( "#"+div_id );
     var animation_div = d3.select("#"+div_id);
     var this_width = animation_div[0][0].offsetWidth;
-    console.log( "File " + file_name );
     d3.csv(file_name,
 	   function(error,data){
 	       var sorted_data = data.sort( function( a,b) {
@@ -29,7 +26,6 @@ function make_bars( div_id, file_name, cb ) {
 		       return colors[data[" datastructure"]];
 		   })
 		   .text(function(d) { return d.languagerepresentation; });
-	       console.log( data );
 	       cb(div_id, bars);
 	   });
 }
