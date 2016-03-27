@@ -49,13 +49,13 @@
 	  <h1>Benchmarking languages for evolutionary algorithms</h1>
 	</section>
 	
-	<section id='bf'>
+	<section id='bf' class='chart'>
 	</section>
 	
-	<section id='xo'>
+	<section id='xo' class='chart'>
 	</section>
 	
-	<section id='mo'>
+	<section id='mo'  class='chart'>
 	</section>
 	
       </div>
@@ -100,6 +100,23 @@
        make_bars( d, d+"-256bits.csv", set_div_data );
      }
      
+     var slide_re = /\#\/(\w+)/;
+     Reveal.addEventListener( 'slidechanged', function( event ) {
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+       console.log(event.currentSlide.id);
+       switch(event.currentSlide.id) {
+	 case 'bf':
+	   animate( 'bf',d3_divs['bf'] );
+	   break;
+	 case 'mo':
+	   animate( 'mo', d3_divs['mo'] );
+	   break;
+	 case 'xo':
+	   animate( 'xo', d3_divs['xo'] );
+	   break;
+       }
+
+     } );
     </script>
 
   </body>

@@ -10,16 +10,15 @@
 
 
 .chart div {
-  font: 30px sans-serif;
-  background-color: orange;
-  text-align: right;
-  padding: 5px;
-  margin: 3px;
-  color: white;
+             background-color: orange;
+             text-align: right;
+             padding: 5px;
+             margin: 3px;
+             font: 14px "Fira Mono";
 }
 
 .fija div {
-            font: 14px "Fira Mono";
+            font: 20px "Fira Mono";
             background-color: blue;
             text-align: right;
             padding: 2px;

@@ -31,10 +31,12 @@ function make_bars( div_id, file_name, cb ) {
 }
 
 // animates
-function animate( bars ) {
+function animate( div_id, bars ) {
+    var animation_div = d3.select("#"+div_id);
+    var this_width = animation_div[0][0].offsetWidth;
     bars.transition()
 	.delay(function( d ) {
-	    return 5000*d[" normtime"]; // scale to 10 seconds
+	    return 7000*d[" normtime"]; // scale to 10 seconds
 	})
 	.style("width", function( data ) {
 	    return scale(data,this_width);
