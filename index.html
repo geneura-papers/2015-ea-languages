@@ -1,105 +1,108 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Benchmarking languages for evolutionary algorithms</title>
+    
+    <meta name="description" content="Flash presentation for EvoStar">
+    <meta name="author" content="JJ Merelo">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+    <link rel="stylesheet" href="css/extra.css">
+    
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
+    
+    <!-- d3 here -->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-		<title>Benchmarking languages for evolutionary algorithms</title>
+  <body>
 
-		<meta name="description" content="Flash presentation for EvoStar">
-		<meta name="author" content="JJ Merelo">
+    <div class="reveal">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+	<section>
+	  <h1>Benchmarking languages for evolutionary algorithms</h1>
+	</section>
+	
+	<section id='bf'>
+	</section>
+	
+	<section id='xo'>
+	</section>
+	
+	<section id='mo'>
+	</section>
+	
+      </div>
+      
+    </div>
+    
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/animation.js"></script>
+    
+    <script>
+     
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       width: 1200,
+       height: 800,
+       transition: 'concave', // none/fade/slide/convex/concave/zoom
+       
+       // Optional reveal.js plugins
+       dependencies: [
+	 { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	 { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	 { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	 { src: 'plugin/zoom-js/zoom.js', async: true },
+	 { src: 'plugin/notes/notes.js', async: true }
+       ]
+     });
+     
+     var d3_divs = new Array;
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
-		<link rel="stylesheet" href="css/extra.css">
-
-		<!-- d3 here -->
-		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-			  <section>
-			    <h1>Benchmarking languages for evolutionary algorithms</h1>
-			  </section>
-
-			  <section id='bf'>
-			  </section>
-
-			  <section id='xo'>
-			  </section>
-
-			  <section id='mo'>
-			  </section>
-			  
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-		<script src="js/animation.js"></script>
-
-		<script>
-
-		  // Full list of configuration options available at:
-		  // https://github.com/hakimel/reveal.js#configuration
-		  Reveal.initialize({
-		    controls: true,
-		    progress: true,
-		    history: true,
-		    center: true,
-		    width: 1200,
-		    height: 800,
-		    transition: 'concave', // none/fade/slide/convex/concave/zoom
-		    
-		    // Optional reveal.js plugins
-		    dependencies: [
-		      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-		      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		      { src: 'plugin/zoom-js/zoom.js', async: true },
-		      { src: 'plugin/notes/notes.js', async: true }
-		    ]
-		  });
-
-		 var d3_divs = new Array;
-		 function set_div_data ( div_id, bars ) {
-		   d3_divs[ div_id ] = bars;
-		 }
-
-		 for (var d in ['bf','xo','mo']) {
-		   load_data( "#"+d, d+"-256bits.csv", set_div_data );
-		 }
-		 console.log( d3_divs );
-
-		</script>
+     function set_div_data ( div_id, bars ) {
+       d3_divs[ div_id ] = bars;
+     }
+     
+     for (var d of ["bf","xo","mo"]) {
+       console.log("loop " + d );
+       make_bars( d, d+"-256bits.csv", set_div_data );
+     }
+     console.log( d3_divs );
+     
+    </script>
 
 	</body>
 </html>
